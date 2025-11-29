@@ -7,10 +7,6 @@ build/
 .vite/
 public/build/
 
-# Tailwind generated CSS (ignore if you build in CI; remove this line if you want to commit the built CSS)
-src/css/output.css
-
-# Dependencies lock files SHOULD be committed (package-lock.json / yarn.lock / pnpm-lock.yaml)
 
 # Environment
 .env
