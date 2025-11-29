@@ -67,3 +67,83 @@ new Swiper(".reviews-carousel", {
     },
   },
 });
+
+// Header
+(function navToggleInit() {
+  const showBtn = document.getElementById("show-button");
+  const hideBtn = document.getElementById("hide-button");
+  const navMenu = document.getElementById("nav-menu");
+  const header = document.querySelector(".header");
+  const navLink = document.querySelector(".nav-link");
+  if (!navMenu) return;
+  const open = () => {
+    navMenu.classList.remove("hidden");
+    showBtn?.classList.add("hidden");
+    hideBtn?.classList.remove("hidden");
+    navMenu.setAttribute("aria-expanded", "true");
+    header.classList.add("bg-white", "shadow-lg", "rounded-md");
+    navLink.classList.remove("mr-[-1.25rem]");
+  };
+  const close = () => {
+    navMenu.classList.add("hidden");
+    showBtn?.classList.remove("hidden");
+    hideBtn?.classList.add("hidden");
+    navMenu.setAttribute("aria-expanded", "false");
+    header.classList.remove("bg-white", "shadow-lg", "rounded-md");
+    navLink.classList.add("mr-[-1.25rem]");
+  };
+  showBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    open();
+  });
+  hideBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    close();
+  });
+  // optional: close when clicking a link
+  navMenu
+    .querySelectorAll("a")
+    .forEach((a) => a.addEventListener("click", () => close()));
+
+  // Mobile dropdown: show "Pages" on hover/tap
+  const dropdowns = navMenu.querySelectorAll(".nav-dropdown");
+  dropdowns.forEach((dd) => {
+    const trigger =
+      dd.querySelector("[data-dropdown-trigger]") ||
+      dd.querySelector(".nav-link");
+    const list = dd.querySelector(".nav-dropdown-list");
+    if (!trigger || !list) return;
+
+    const isDesktop = () => window.matchMedia("(min-width: 1024px)").matches;
+
+    // On mobile: show submenu on mouseenter or touchstart
+    const showDropdown = () => {
+      if (isDesktop()) return; // desktop uses CSS group-hover
+      list.classList.remove("hidden");
+      // close other open dropdowns
+      dropdowns.forEach((other) => {
+        if (other !== dd)
+          other.querySelector(".nav-dropdown-list")?.classList.add("hidden");
+      });
+    };
+
+    trigger.addEventListener("mouseenter", showDropdown);
+    trigger.addEventListener(
+      "touchstart",
+      (e) => {
+        showDropdown();
+        e.preventDefault(); // prevent ghost click
+      },
+      { passive: false }
+    );
+
+    // Close when mouse leaves or clicking outside (mobile only)
+    dd.addEventListener("mouseleave", () => {
+      if (!isDesktop()) list.classList.add("hidden");
+    });
+    document.addEventListener("click", (evt) => {
+      if (isDesktop()) return;
+      if (!dd.contains(evt.target)) list.classList.add("hidden");
+    });
+  });
+})();

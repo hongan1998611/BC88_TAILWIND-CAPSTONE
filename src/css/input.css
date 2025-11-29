@@ -22,3 +22,72 @@ body {
 .solution .img-absolute {
   transform: translateY(-50%);
 }
+
+.nav-dropdown-list {
+  z-index: 10;
+  margin-right: auto;
+  margin-left: 0.25rem;
+  margin-top: 1rem;
+  min-width: 180px;
+  background-color: rgba(254, 96, 25, 0.05);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition-duration: 300ms;
+  border-radius: 0.5rem;
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgba(254, 96, 25, 0.25);
+}
+
+.nav-dropdown-link:hover {
+  --tw-text-opacity: 1;
+  color: rgb(254 96 25 / var(--tw-text-opacity));
+}
+.nav-dropdown-link {
+  min-width: 150px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(34 34 34 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.header .nav-dropdown-item {
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .nav-dropdown-list {
+    margin-top: 0px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    --tw-shadow: 0 0.9rem 1.56rem rgb(0, 0, 0, 0.1);
+    --tw-shadow-colored: 0 0.9rem 1.56rem var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-width: 1px;
+  }
+
+  .header .nav-dropdown-item {
+    text-align: left;
+  }
+}

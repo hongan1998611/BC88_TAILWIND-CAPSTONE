@@ -79,13 +79,16 @@
 
   <body>
     <!-- Header -->
-    <header class="sticky top-0 z-10 py-6">
-      <nav class="container relative flex flex-wrap items-center">
+    <header class="header relative top-0 z-10 py-6">
+      <nav
+        class="container relative flex flex-wrap items-center justify-between"
+      >
         <div class="order-0">
-          <a href="index.html">
+          <a href="#">
             <img src="./src/img/logo.svg" alt="logo" />
           </a>
         </div>
+        <input id="nav-toggle" type="checkbox" class="hidden" />
         <label
           id="show-button"
           for="nav-toggle"
@@ -112,73 +115,63 @@
         <!-- /navbar toggler -->
         <ul
           id="nav-menu"
-          class="navbar-nav order-2 hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5"
+          class="navbar-nav order-2 text-center hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5"
         >
           <li class="nav-item">
-            <a href="" class="nav-link active">Home</a>
+            <a href="#" class="nav-link active mr-[-1.25rem]">Home</a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
+            <a href="#" class="nav-link">About</a>
           </li>
           <li class="nav-item">
-            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="#" class="nav-link">Blog</a>
           </li>
           <li class="nav-item">
-            <a href="features.html" class="nav-link">Features</a>
+            <a href="#" class="nav-link">Features</a>
           </li>
           <li class="nav-item">
-            <a href="how-it-works.html" class="nav-link">How It Works</a>
+            <a href="#" class="nav-link">How It Works</a>
           </li>
           <li class="nav-item nav-dropdown group relative">
-            <span class="nav-link inline-flex items-center">
+            <span class="nav-link flex items-center justify-center">
               Pages
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+              <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20">
                 <path
                   d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                />
+                ></path>
               </svg>
             </span>
             <ul
               class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
             >
-              <li class="nav-dropdown-item">
-                <a href="career.html" class="nav-dropdown-link">Career</a>
+              <li class="nav-dropdown-item mb-1">
+                <a href="#" class="nav-dropdown-link">Career</a>
               </li>
-              <li class="nav-dropdown-item">
-                <a href="career-single.html" class="nav-dropdown-link"
-                  >Career Single</a
-                >
+              <li class="nav-dropdown-item mb-1">
+                <a href="#" class="nav-dropdown-link">Career Single</a>
               </li>
-              <li class="nav-dropdown-item">
-                <a href="integrations.html" class="nav-dropdown-link"
-                  >Integrations</a
-                >
+              <li class="nav-dropdown-item mb-1">
+                <a href="#" class="nav-dropdown-link">Integrations</a>
               </li>
-              <li class="nav-dropdown-item">
-                <a href="integration-single.html" class="nav-dropdown-link"
-                  >Integration Single</a
-                >
+              <li class="nav-dropdown-item mb-1">
+                <a href="#" class="nav-dropdown-link">Integration Single</a>
               </li>
-              <li class="nav-dropdown-item">
-                <a href="pricing.html" class="nav-dropdown-link">Pricing</a>
+              <li class="nav-dropdown-item mb-1">
+                <a href="#" class="nav-dropdown-link">Pricing</a>
               </li>
-              <li class="nav-dropdown-item">
-                <a href="changelogs.html" class="nav-dropdown-link"
-                  >Changelogs</a
-                >
+              <li class="nav-dropdown-item mb-1">
+                <a href="#" class="nav-dropdown-link">Changelogs</a>
               </li>
-              <li class="nav-dropdown-item">
-                <a href="terms-conditions.html" class="nav-dropdown-link"
-                  >Terms & Conditions</a
-                >
+              <li class="nav-dropdown-item mb-1">
+                <a href="#" class="nav-dropdown-link">Terms & Conditions</a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">Contact</a>
           </li>
           <li class="nav-item mt-3.5 lg:hidden">
-            <a class="btn btn-white btn-sm border-border" href="signin.html"
+            <a class="btn btn-white btn-sm border-border" href="#"
               >Sing Up Now</a
             >
           </li>
@@ -186,13 +179,15 @@
         <div
           class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex"
         >
-          <a class="btn btn-white btn-sm" href="signin.html">Sing Up Now</a>
+          <a class="btn btn-white lg:max-h-[42px] flex items-center" href="#"
+            >Sing Up Now</a
+          >
         </div>
       </nav>
     </header>
 
     <!-- Enterprise -->
-    <section class="py-16">
+    <section class="py-16 relative">
       <div class="container">
         <div class="flex flex-wrap items-center mt-0 ml-[-1rem] mr-[-1rem]">
           <div class="lg:w-1/2 px-4">
@@ -231,7 +226,7 @@
         <div
           class="flex flex-wrap justify-between text-center mt-0 lg:text-start"
         >
-          <div class="px-4 mt-0 w-full lg:w-5/12">
+          <div class="mt-0 w-full lg:w-5/12">
             <h2>The Highlighting Part Of Our Solution</h2>
           </div>
           <div class="px-4 mt-6 w-full lg:w-5/12 lg:mt-0">
