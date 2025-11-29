@@ -61,11 +61,9 @@ new Swiper(".reviews-carousel", {
   breakpoints: {
     768: {
       slidesPerView: 2,
-      slidesPerGroup: 2,
     },
     992: {
       slidesPerView: 3,
-      slidesPerGroup: 3,
     },
   },
 });
