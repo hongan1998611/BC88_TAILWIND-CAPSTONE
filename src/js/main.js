@@ -147,3 +147,16 @@ new Swiper(".reviews-carousel", {
     });
   });
 })();
+// --- Video Play Button ---
+document.addEventListener("DOMContentLoaded", function () {
+  const playButton = document.querySelector(".video-play-btn");
+  const thumbnail = document.querySelector(".video-thumbnail");
+  const player = document.querySelector(".video-player");
+
+  if (playButton && thumbnail && player) {
+    playButton.addEventListener("click", function () {
+      thumbnail.style.display = "none"; // hide thumbnail + button
+      player.classList.remove("hidden"); // show iframe
+    });
+  }
+});
